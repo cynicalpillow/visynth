@@ -87,4 +87,4 @@ def getChords(sz):
         background.append(chords[i%chordLen])
     return background
 
-print(getParts("pentatonic", "A", imgToFunc("https://i.ytimg.com/vi/RvaNnvl2Q8g/maxresdefault.jpg", 3)))
+print(getParts("pentatonic", "A", imgToFunc("https://ae01.alicdn.com/kf/HTB122SJhoRIWKJjSZFgq6zoxXXak/wall-art-canvas-font-b-fabric-b-font-poster-font-b-print-b-font-fantasy-font.jpg", 3)))

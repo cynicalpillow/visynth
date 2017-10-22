@@ -15,7 +15,7 @@ function playChord(a, b, c, d, i){
 	instrument1.play(c, i, 0.6);
 	instrument1.play(d, i, 0.6);
 }
-function playSong(theme, instr, instr1, result){
+function playSong(theme, instr, instr1){
     var countChord = 0;
     setInstrumentMelody(instr);
     setInstrumentChord(instr1);
@@ -62,4 +62,4 @@ function playSong(theme, instr, instr1, result){
         countChord = 0;
     }
 }
-//document.getElementById("submit").addEventListener("click", function(){playSong(0, 'acoustic', 'acoustic')});
+playSong(0, 'piano', 'piano');
