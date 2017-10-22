@@ -15,9 +15,11 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-from visynthapp.views import CreateGenerateView
+
+from . import views
 
 urlpatterns = [
-    url(r'^$', CreateGenerateView.as_view(), name='upload'),
+    url(r'^$', views.index),
+    url(r'^visynth/views/generateData', views.generateData),
     url(r'^admin/', admin.site.urls),
 ]
