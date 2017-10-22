@@ -2,16 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    {% load static %}
+    {% load staticfiles %}
     <title>Title</title>
 </head>
 <body>
-    <form action="" method="post">{% csrf_token %}
-        {{ form.as_p }}
-        <input type="submit" value="Save" />
-    </form>
+<script>var result ={{ derp|safe }}; alert(result);</script>
+<script src="{%  static audiosynth.js %}"></script>
+<script src="{%  static notePlaying.js %}"></script>
 </body>
-<script src="{% static 'audiosynth.js' %}">
-</script>
-<script src="{% static 'notePlaying.js' %}">
-</script>
 </html>

@@ -48,18 +48,21 @@ function playSong(theme, instr, instr1){
 ['E', 'G', 'B', 'D']
 ];
 	var seconds = 0;
-	var cc = 0;
-    for(i = 0; i < result.length; i++){
-        for(j = 0; j < result[i].length; j++){
-            setTimeout(playNote, seconds, result[i][j], 4);
-            countChord++;
-            if(countChord%3==0){
-                if(theme==0)setTimeout(playChord, seconds, chordListBlues[cc][0], chordListBlues[cc][1], chordListBlues[cc][2], chordListBlues[cc++][3], 4);
-                else if(theme = 1)setTimeout(playChord, seconds, chordListOriental[cc][0], chordListOriental[cc][1], chordListOriental[cc++][2], chordListOriental[countChord/3][3], 4);
-            }
-            seconds+=450;
-        }
-        countChord = 0;
-    }
+		var cc = 0;
+	    for(i = 0; i < result.length; i++){
+	        for(j = 0; j < result[i].length; j++){
+	        	if(result[i][j].length > 1){
+	            	setTimeout(playNote, seconds, result[i][j].substring(0, 1), parseInt(result[i][j].substring(1, 2)));
+	        	}
+	            countChord++;
+	            if(countChord%3==0){
+	                if(theme==0)setTimeout(playChord, seconds, chordListBlues[cc][0], chordListBlues[cc][1], chordListBlues[cc][2], chordListBlues[cc++][3], 4);
+	                else if(theme = 1)setTimeout(playChord, seconds, chordListOriental[cc][0], chordListOriental[cc][1], chordListOriental[cc][2], chordListOriental[cc++][3], 4);
+	            }
+	            cc %= 12;
+	            seconds+=450;
+	        }
+	        countChord = 0;
+	    }
 }
 playSong(0, 'piano', 'piano');

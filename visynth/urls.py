@@ -20,6 +20,6 @@ from . import views
 
 urlpatterns = [
     url(r'^$', views.index),
-    url(r'^visynth/views/generateData', views.generateData),
+    url(r'^query/', views.generateData),
     url(r'^admin/', admin.site.urls),
 ]
