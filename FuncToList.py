@@ -60,7 +60,7 @@ def getMelody(type, let, clst):
     scaleLen = len(cScale)
 
     for i in range(len(clst)):
-        if(clist[i] != -1):
+        if(clst[i] != -1):
             ret.append(cScale[clst[i]%scaleLen])
         else:
             ret.append("")
@@ -78,12 +78,11 @@ def getParts(type, let, lists):
     parts = []
     for list in lists:
         parts.append(getMelody(type, let, list))
-    return parts
-    background = [];
+    background = []
     chordLen = len(chords)
     for i in range(len(parts)):
         background.append(chords[i%chordLen])
     parts.append(background)
     return parts
 
-#print(getMelody("pentatonic", "A", imgToFunc("https://i.ytimg.com/vi/RvaNnvl2Q8g/maxresdefault.jpg", 2)[0]))
+print(getParts("pentatonic", "A", imgToFunc("https://i.ytimg.com/vi/RvaNnvl2Q8g/maxresdefault.jpg", 3)))
