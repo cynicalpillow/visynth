@@ -78,11 +78,13 @@ def getParts(type, let, lists):
     parts = []
     for list in lists:
         parts.append(getMelody(type, let, list))
+    return parts
+
+def getChords(sz):
     background = []
     chordLen = len(chords)
-    for i in range(len(parts)):
+    for i in range(sz):
         background.append(chords[i%chordLen])
-    parts.append(background)
-    return parts
+    return background
 
 print(getParts("pentatonic", "A", imgToFunc("https://i.ytimg.com/vi/RvaNnvl2Q8g/maxresdefault.jpg", 3)))
