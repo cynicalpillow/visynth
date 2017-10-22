@@ -51,7 +51,10 @@ body
 }
 
 .search_button {
-	padding: 15px 30px 15px 30px;
+	padding: 17px 30px 17px 30px;
+	position: relative;
+	left: -3px;
+	top: -3px;
 	color: white;
 	font-size: 20px;
 	background-color: #000000;
