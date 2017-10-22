@@ -1,15 +1,24 @@
 var instrument = Synth.createInstrument('piano');
+var instrument1 = Synth.createInstrument('acoustic');
+function setInstrumentMelody(s){
+	instrument = Synth.createInstrument(s);
+}
+function setInstrumentChord(s){
+	instrument1 = Synth.createInstrument(s);
+}
 function playNote(z, i){
 	instrument.play(z, i, 1);
 }
 function playChord(a, b, c, d, i){
-	instrument.play(a, i, 0.7);
-	instrument.play(b, i, 0.7);
-	instrument.play(c, i, 0.7);
-	instrument.play(d, i, 0.7);
+	instrument1.play(a, i, 0.6);
+	instrument1.play(b, i, 0.6);
+	instrument1.play(c, i, 0.6);
+	instrument1.play(d, i, 0.6);
 }
-function playSong(theme, result){
+function playSong(theme, instr, instr1, result){
     var countChord = 0;
+    setInstrumentMelody(instr);
+    setInstrumentChord(instr1);
     var chordListBlues = [
 ['A', 'C', 'E', 'G'],
 ['D', 'F', 'A', 'C'],
@@ -53,4 +62,4 @@ function playSong(theme, result){
         countChord = 0;
     }
 }
-//document.getElementById("submit").addEventListener("click", playSong, 1);
+//document.getElementById("submit").addEventListener("click", function(){playSong(0, 'acoustic', 'acoustic')});
