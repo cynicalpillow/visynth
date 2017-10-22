@@ -1,13 +1,12 @@
-var piano = Synth.createInstrument('piano');
+var instrument = Synth.createInstrument('acoustic');
 function playNote(z, i){
-	piano.play(z, i, 1);
-	console.log("played " + z);
+	instrument.play(z, i, 1);
 }
 function playChord(a, b, c, d, i){
-	piano.play(a, i, 1);
-	piano.play(b, i, 1);
-	piano.play(c, i, 1);
-	piano.play(d, i, 1);
+	instrument.play(a, i, 0.7);
+	instrument.play(b, i, 0.7);
+	instrument.play(c, i, 0.7);
+	instrument.play(d, i, 0.7);
 }
 function playSong(theme){
     var countChord = 0;
@@ -40,18 +39,18 @@ function playSong(theme){
 ['E', 'G', 'B', 'D']
 ];
 	var seconds = 0;
+	var cc = 0;
     for(i = 0; i < result.length; i++){
         for(j = 0; j < result[i].length; j++){
             setTimeout(playNote, seconds, result[i][j], 4);
             countChord++;
             if(countChord%3==0){
-                if(theme==0)setTimeout(playChord, seconds, chordListBlues[countChord/3][0], chordListBlues[countChord/3][1], chordListBlues[countChord/3][2], chordListBlues[countChord/3][3], 4);
-                else if(theme = 1)setTimeout(playChord, seconds, chordListOriental[countChord/3][0], chordListOriental[countChord/3][1], chordListOriental[countChord/3][2], chordListOriental[countChord/3][3], 4);
+                if(theme==0)setTimeout(playChord, seconds, chordListBlues[cc][0], chordListBlues[cc][1], chordListBlues[cc][2], chordListBlues[cc++][3], 4);
+                else if(theme = 1)setTimeout(playChord, seconds, chordListOriental[cc][0], chordListOriental[cc][1], chordListOriental[cc++][2], chordListOriental[countChord/3][3], 4);
             }
-            seconds+=500;
-            console.log(seconds);
+            seconds+=450;
         }
         countChord = 0;
     }
 }
-document.getElementById("submit").addEventListener("click", playSong, 0);
+document.getElementById("submit").addEventListener("click", playSong, 1);
