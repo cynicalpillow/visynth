@@ -60,7 +60,10 @@ def getMelody(type, let, clst):
     scaleLen = len(cScale)
 
     for i in range(len(clst)):
-        ret.append(cScale[clst[i]%scaleLen])
+        if(clist[i] != -1):
+            ret.append(cScale[clst[i]%scaleLen])
+        else:
+            ret.append("")
 
     return ret
 
