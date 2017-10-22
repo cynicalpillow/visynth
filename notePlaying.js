@@ -1,4 +1,4 @@
-var instrument = Synth.createInstrument('acoustic');
+var instrument = Synth.createInstrument('piano');
 function playNote(z, i){
 	instrument.play(z, i, 1);
 }
@@ -8,7 +8,7 @@ function playChord(a, b, c, d, i){
 	instrument.play(c, i, 0.7);
 	instrument.play(d, i, 0.7);
 }
-function playSong(theme){
+function playSong(theme, result){
     var countChord = 0;
     var chordListBlues = [
 ['A', 'C', 'E', 'G'],
@@ -53,4 +53,4 @@ function playSong(theme){
         countChord = 0;
     }
 }
-document.getElementById("submit").addEventListener("click", playSong, 1);
+//document.getElementById("submit").addEventListener("click", playSong, 1);
