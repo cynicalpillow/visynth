@@ -73,7 +73,7 @@ def getParts(type, let, lists):
     :param type: string
     :param let: string
     :param lists: list of lists
-    :return: list of lists
+    :return: list of lists of strings
     """
     parts = []
     for list in lists:
