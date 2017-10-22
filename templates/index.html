@@ -16,7 +16,7 @@
 	<div class="search_container">
 		<h1 class="main_title">Visynth</h1>
 		<div class="search">
-            <form method = "POST" action = "/">
+            <form method = "POST" action = "/">{% csrf_token %}
                 <input type="text" name="Search" class="centered" placeholder="Image url...">
                 <button name="submit" id="submit" class="search_button">Generate music</button>
             </form>
