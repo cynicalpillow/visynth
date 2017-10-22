@@ -1,4 +1,4 @@
-from ImgToFunc import imgToFunc
+from visynth.ImgToFunc import imgToFunc
 
 scales =\
     {
